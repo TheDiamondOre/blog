@@ -1,58 +1,65 @@
-$(document).ready( function () {
-    $('article').lightGallery({
-        selector: '.img-item',
-        subHtmlSelectorRelative: true
-    });
+/* global KEEP */
 
-    let tocInit = function () {
-        $("#toc-content a").each( function () {
-            var oldText = $(this).text();
-            var newText = oldText.replace('#','');
-            $(this).text(newText);
+window.addEventListener('DOMContentLoaded', () => {
 
-            if ($(this).hasClass("toc-link")) {
-                $(this).addClass("text-truncate d-block");
-            }
-        });
+  KEEP.themeInfo = {
+    theme: `Keep v${KEEP.theme_config.version}`,
+    author: 'XPoet',
+    repository: 'https://github.com/XPoet/hexo-theme-keep'
+  }
+
+  KEEP.localStorageKey = 'KEEP-THEME-STATUS';
+
+  KEEP.styleStatus = {
+    isExpandPageWidth: false,
+    isDark: false,
+    fontSizeLevel: 0,
+    isOpenPageAside: true
+  }
+
+  // print theme base info
+  KEEP.printThemeInfo = () => {
+    console.log(`\n %c ${KEEP.themeInfo.theme} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
+  }
+
+  // set styleStatus to localStorage
+  KEEP.setStyleStatus = () => {
+    localStorage.setItem(KEEP.localStorageKey, JSON.stringify(KEEP.styleStatus));
+  }
+
+  // get styleStatus from localStorage
+  KEEP.getStyleStatus = () => {
+    let temp = localStorage.getItem(KEEP.localStorageKey);
+    if (temp) {
+      temp = JSON.parse(temp);
+      for (let key in KEEP.styleStatus) {
+        KEEP.styleStatus[key] = temp[key];
+      }
+      return temp;
+    } else {
+      return null;
     }
-    tocInit();
+  }
 
-    let cardListInit = function () {  
-	    $(".card ul").each( function () {
-            if ($(this).parent().hasClass("card-body")) {
-                $(this).unwrap();
-            }
-        });
-        $(".card ul").addClass("list-group list-group-flush");
-        $(".card ul li").addClass("list-group-item");
+  KEEP.refresh = () => {
+    KEEP.initUtils();
+    KEEP.initHeaderShrink();
+    KEEP.initModeToggle();
+    KEEP.initBack2Top();
+
+    if (KEEP.theme_config.local_search.enable === true) {
+      KEEP.initLocalSearch();
     }
-    cardListInit();
 
-    $(".dropdown-menu a").on('click', function () {
-        event.preventDefault(); 
-        event.stopPropagation(); 
-        
-        if ($(this).hasClass("toc-link")) {
-            const elem = $(this).attr("href");
-            window.location.href = elem;
-        } 
-    });
+    if (KEEP.theme_config.code_copy.enable === true) {
+      KEEP.initCodeCopy();
+    }
 
-    $('.expand-toggle').on('click', function () {
-        $("#toc-content").toggleClass("expand");
-        $(".expand-text").toggle();
-        $(".close-text").toggle();
-    })
+    if (KEEP.theme_config.lazyload.enable === true) {
+      KEEP.initLazyLoad();
+    }
+  }
 
-    $('.back-to-top').on('click', function () {
-        $('body, html').stop(true, true).animate({
-            scrollTop: 0
-        }, 100, 'linear');
-    });
-
-    $('.go-to-bottom').on('click', function () {
-        $('body, html').stop(true, true).animate({
-            scrollTop: $(document.body)[0].scrollHeight
-        }, 100, 'linear');
-    });
+  KEEP.printThemeInfo();
+  KEEP.refresh();
 });
