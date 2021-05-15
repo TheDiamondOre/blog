@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://thediamondore.github.io/wfls.github.io/%E6%88%90%E5%B0%B1/index.html</loc>
+    <loc>http://thediamondore.github.io/thediamondore.github.io/%E6%88%90%E5%B0%B1/index.html</loc>
     
     <lastmod>2021-05-15</lastmod>
     
   </url>
   
   <url>
-    <loc>http://thediamondore.github.io/wfls.github.io/2021/05/15/hello-world/</loc>
+    <loc>http://thediamondore.github.io/thediamondore.github.io/2021/05/15/hello-world/</loc>
     
     <lastmod>2021-05-15</lastmod>
     
@@ -17,7 +17,7 @@
   
 
   <url>
-    <loc>http://thediamondore.github.io/wfls.github.io</loc>
+    <loc>http://thediamondore.github.io/thediamondore.github.io</loc>
     <lastmod>2021-05-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>

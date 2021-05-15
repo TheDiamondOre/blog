@@ -3,11 +3,11 @@
   <title>WFLS Online!</title>
   
   
-  <link href="http://thediamondore.github.io/wfls.github.io/atom.xml" rel="self"/>
+  <link href="http://thediamondore.github.io/thediamondore.github.io/atom.xml" rel="self"/>
   
-  <link href="http://thediamondore.github.io/wfls.github.io/"/>
+  <link href="http://thediamondore.github.io/thediamondore.github.io/"/>
   <updated>2021-05-15T08:07:27.983Z</updated>
-  <id>http://thediamondore.github.io/wfls.github.io/</id>
+  <id>http://thediamondore.github.io/thediamondore.github.io/</id>
   
   <author>
     <name>TheDiamondOre</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://thediamondore.github.io/wfls.github.io/2021/05/15/hello-world/"/>
-    <id>http://thediamondore.github.io/wfls.github.io/2021/05/15/hello-world/</id>
+    <link href="http://thediamondore.github.io/thediamondore.github.io/2021/05/15/hello-world/"/>
+    <id>http://thediamondore.github.io/thediamondore.github.io/2021/05/15/hello-world/</id>
     <published>2021-05-15T08:07:27.983Z</published>
     <updated>2021-05-15T08:07:27.983Z</updated>
     
